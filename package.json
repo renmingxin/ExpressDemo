@@ -1,0 +1,22 @@
+{
+  "name": "expressdemo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renmingxin/ExpressDemo.git"
+  },
+  "author": "rmx",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/renmingxin/ExpressDemo/issues"
+  },
+  "homepage": "https://github.com/renmingxin/ExpressDemo#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
