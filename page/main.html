@@ -2,9 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+    <div>
+        这是Main页面
+        <input type="file" id="file" />
+        <input type="button" onclick="submitFile()" value="上传"/>
+        <div>
+            <img id="pic"/>
+        </div>
+    </div>
+    <script>
+        function submitFile(){
+            let file = document.getElementById('file').files[0];
+
+            let form = new FormData();
+            form.append('file',file);
+
+            let xhr = new XMLHttpRequest();
+            xhr.open('post', '/upload',true);
+            xhr.onload = function (){
+                alert('上传完成');
+            };
+            xhr.send(form);
+            xhr.onreadystatechange = function (){
+                if (xhr.readyState === 4 && xhr.status === 200){
+                    let path = xhr.responseText;
+                    console.log(path);
+                    document.getElementById('pic').src = `/getPicture?path=${path}`;
+                }
+            }
+        }
+    </script>
 </body>
 </html>
